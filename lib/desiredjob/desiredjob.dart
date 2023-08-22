@@ -1,0 +1,1 @@
+export 'view/desiredjob_page.dart';

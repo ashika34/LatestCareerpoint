@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "266275570125",
+    "project_id": "cp-project-684cd",
+    "storage_bucket": "cp-project-684cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266275570125:android:afe219ad10d451efc68484",
+        "android_client_info": {
+          "package_name": "com.example.verygoodcore.careerpoint2.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "266275570125-6q9tdg7oa1hjq05gncvvt1obcmpk78rb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyp5ahgJs5-A2u4PAgvR1ufg03onBMoHk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "266275570125-6q9tdg7oa1hjq05gncvvt1obcmpk78rb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
