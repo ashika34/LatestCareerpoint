@@ -10,9 +10,9 @@ class _CarouselWithControlsState extends State<CarouselWithControls> {
   int _currentIndex = 0;
   List<String> _images = [
    
-    'assets/images/pic1.png',
-    'assets/images/pic2.png',
-    'assets/images/pic3.png',
+    'assets/images/a.png',
+    'assets/images/b.png',
+    'assets/images/c.png',
    
   ];
 

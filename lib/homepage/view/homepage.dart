@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage>
             SizedBox(
               height: 15,
             ),
-StreamBuilder<QuerySnapshot>(
+   StreamBuilder<QuerySnapshot>(
   stream: FirebaseFirestore.instance.collection('jobcollection').snapshots(),
   builder: (context, snapshot) {
     if (snapshot.hasError) {
@@ -88,25 +88,18 @@ StreamBuilder<QuerySnapshot>(
         child: CircularProgressIndicator(),
       );
     }
-
-    final jobDocs = snapshot.data!.docs as List<QueryDocumentSnapshot<Map<String, dynamic>>>;
-
-    return Expanded(
+   final jobDocs = snapshot.data!.docs as List<QueryDocumentSnapshot<Map<String, dynamic>>>;
+   return Expanded(
       child: ListView.builder(
         itemCount: jobDocs.length,
         itemBuilder: (context, index) {
           Map<String, dynamic> jobData = jobDocs[index].data();
-
-          return MyCard(job: jobData); // Assuming MyCard accepts Map<String, dynamic>
+          return MyCard(job: jobData); 
         },
       ),
     );
   },
-),
-
-            
-            // MyCard(),
-          ],
+),],
         ),
       ),
       bottomNavigationBar: BottomAppBar(

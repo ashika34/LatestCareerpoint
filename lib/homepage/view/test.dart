@@ -1,50 +1,77 @@
-// import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:flutter/material.dart';
-// import 'package:cloud_firestore/cloud_firestore.dart';
+// class FavoriteList extends StatefulWidget {
+//   @override
+//   _FavoriteListState createState() => _FavoriteListState();
+// }
 
-// class JobCollectionScreen extends StatelessWidget {
+// class _FavoriteListState extends State<FavoriteList> {
+//   List<JobDetailsCard> favoriteJobDetailsCards = [];
 
-  
+//   @override
+//   void initState() {
+//     super.initState();
+//     // Get the list of favorite job details cards from the Realtime Database.
+//     FirebaseFirestore.instance
+//         .collection('favorites')
+//         .snapshots()
+//         .listen((snapshot) {
+//       setState(() {
+//         favoriteJobDetailsCards = snapshot.docs.map((doc) {
+//           return JobDetailsCard.fromJson(doc.data());
+//         }).toList();
+//       });
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return ListView(
+//       children: favoriteJobDetailsCards.map((card) {
+//         return ListTile(
+//           leading: Icon(Icons.favorite),
+//           title: Text(card.title),
+//           onTap: () {
+//             // Toggle the favorite status of the job details card.
+//             setState(() {
+//               card.isFavorite = !card.isFavorite;
+//             });
+//             // Save the changes to the favorite status in the Realtime Database.
+//             FirebaseFirestore.instance
+//                 .collection('favorites')
+//                 .doc(card.id)
+//                 .update({'isFavorite': card.isFavorite});
+//           },
+// //         );
+// //       }).toList(),
+// //     );
+// //   }
+// // }
+
+
+
+
+
+
+
+// class FavoritePage extends StatelessWidget {
+//   final List<JobDetailsCard> favoriteJobDetailsCards;
+
+//   FavoritePage({Key? key, required this.favoriteJobDetailsCards}) : super(key: key);
+
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
 //       appBar: AppBar(
-//         title: Text('Job Collection'),
+//         title: Text('Favorite Jobs'),
 //       ),
-//       body: StreamBuilder<QuerySnapshot>(
-//         stream: jobRef.snapshots(),
-//         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-//           if (snapshot.connectionState == ConnectionState.waiting) {
-//             return CircularProgressIndicator(); // Display loading indicator
-//           }
-
-//           if (snapshot.hasError) {
-//             return Text('Error: ${snapshot.error}');
-//           }
-
-//           if (!snapshot.hasData || snapshot.data.docs.isEmpty) {
-//             return Text('No data available.');
-//           }
-
-//           return ListView.builder(
-//             itemCount: snapshot.data.docs.length,
-//             itemBuilder: (BuildContext context, int index) {
-//               DocumentSnapshot document = snapshot.data.docs[index];
-//               Map<String, dynamic> jobData = document.data() as Map<String, dynamic>;
-
-//               return ListTile(
-//                 title: Text(jobData['title']),
-//                 subtitle: Text(jobData['description']),
-//                 // Add more widgets to display other job details
-//               );
-//             },
+//       body: ListView(
+//         children: favoriteJobDetailsCards.map((card) {
+//           return ListTile(
+//             leading: Icon(Icons.favorite),
+//             title: Text(card.title),
+//             subtitle: Text(card.description),
 //           );
-//         },
+//         }).toList(),
 //       ),
 //     );
 //   }
-// }
-
-// void main() {
-//   runApp(MaterialApp(home: JobCollectionScreen()));
 // }
